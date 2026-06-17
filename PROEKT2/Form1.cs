@@ -123,10 +123,10 @@ namespace PROEKT2
             gameTimer.Tick += GameTimer_Tick;
 
             
-            progressBarProgress.Style = ProgressBarStyle.Marquee; // Временный сброс стилей Windows
+            progressBarProgress.Style = ProgressBarStyle.Marquee; 
             progressBarProgress.Style = ProgressBarStyle.Continuous;
-            progressBarProgress.ForeColor = Color.FromArgb(41, 98, 255); // Синий цвет
-            progressBarProgress.BackColor = Color.FromArgb(24, 29, 41);   // Темно-синяя подложка
+            progressBarProgress.ForeColor = Color.FromArgb(41, 98, 255); 
+            progressBarProgress.BackColor = Color.FromArgb(24, 29, 41);    
 
             
             progressBarProgress.Paint += ProgressBarProgress_Paint;
