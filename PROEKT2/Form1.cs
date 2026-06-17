@@ -272,7 +272,7 @@ namespace PROEKT2
                     lblProgressPercent.Text = "Достижений нет";
                     lblProgressPercent.ForeColor = Color.FromArgb(120, 130, 150);
                 }
-                progressBarProgress.Invalidate(); // Заставляем перерисоваться в нужный цвет
+                progressBarProgress.Invalidate();  перерисоваться в нужный цвет
             }
         }
 
