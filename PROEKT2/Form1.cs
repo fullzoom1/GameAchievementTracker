@@ -66,7 +66,7 @@ namespace PROEKT2
             dgvAchievements.DefaultCellStyle.SelectionForeColor = Color.White;
             dgvAchievements.RowTemplate.Height = 35;
 
-            // Настройка цветов для кастомного синего прогресс-бара
+            
             progressBarProgress.Style = ProgressBarStyle.Continuous;
             progressBarProgress.ForeColor = Color.FromArgb(41, 98, 255);
             progressBarProgress.BackColor = Color.FromArgb(24, 29, 41);
@@ -83,7 +83,7 @@ namespace PROEKT2
 
             btn.Paint += (s, e) =>
             {
-                // ВКЛЮЧАЕМ СГЛАЖИВАНИЕ ДЛЯ ИДЕАЛЬНЫХ УГЛОВ И ЧЕТКОГО ТЕКСТА
+                
                 e.Graphics.SmoothingMode = SmoothingMode.AntiAlias;
                 e.Graphics.TextRenderingHint = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
 
@@ -122,14 +122,13 @@ namespace PROEKT2
             btnPlayGame.Click += BtnPlayGame_Click;
             gameTimer.Tick += GameTimer_Tick;
 
-            // Привязываем кастомную отрисовку полосы прогресса
-            // Включаем кастомный режим и привязываем отрисовку
+            
             progressBarProgress.Style = ProgressBarStyle.Marquee; // Временный сброс стилей Windows
             progressBarProgress.Style = ProgressBarStyle.Continuous;
             progressBarProgress.ForeColor = Color.FromArgb(41, 98, 255); // Синий цвет
             progressBarProgress.BackColor = Color.FromArgb(24, 29, 41);   // Темно-синяя подложка
 
-            // КРИТИЧЕСКИ СВЕРИТЬ: Строка подписки на событие рисования должна быть здесь!
+            
             progressBarProgress.Paint += ProgressBarProgress_Paint;
 
         }
@@ -139,10 +138,10 @@ namespace PROEKT2
             ProgressBar pb = (ProgressBar)sender;
             Rectangle rect = pb.ClientRectangle;
 
-            // Включаем режим качественного рендеринга без системных тем
+            
             e.Graphics.CompositingQuality = System.Drawing.Drawing2D.CompositingQuality.HighQuality;
 
-            // Полностью стираем старый зеленый цвет, заливая фон темно-синим
+            
             using (Brush backBrush = new SolidBrush(Color.FromArgb(24, 29, 41)))
             {
                 e.Graphics.FillRectangle(backBrush, rect);
@@ -157,7 +156,7 @@ namespace PROEKT2
                 {
                     Rectangle fillRect = new Rectangle(0, 0, fillWidth, rect.Height);
 
-                    // Если 100% — золото, если меньше — глубокий синий
+                    
                     Color fillValidColor = (pb.Value == pb.Maximum) ? Color.FromArgb(255, 200, 50) : Color.FromArgb(41, 98, 255);
 
                     using (Brush fillBrush = new SolidBrush(fillValidColor))
@@ -258,7 +257,7 @@ namespace PROEKT2
 
                     if (percent == 100)
                     {
-                        lblProgressPercent.Text = "Выполнено 100%! Идеально 🏆";
+                        lblProgressPercent.Text = "Выполнено 100%! Идеально";
                         lblProgressPercent.ForeColor = Color.FromArgb(255, 200, 50);
                     }
                     else
