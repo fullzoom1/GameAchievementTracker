@@ -272,7 +272,7 @@ namespace PROEKT2
                     lblProgressPercent.Text = "Достижений нет";
                     lblProgressPercent.ForeColor = Color.FromArgb(120, 130, 150);
                 }
-                progressBarProgress.Invalidate();  перерисоваться в нужный цвет
+                progressBarProgress.Invalidate();  
             }
         }
 
@@ -419,7 +419,7 @@ namespace PROEKT2
                                 cmd.Parameters.AddWithValue("@id", ach.Id);
                                 cmd.ExecuteNonQuery();
                             }
-                            MessageBox.Show($"🏆 Получено достижение: {ach.Name}!\n{ach.Description}", "Поздравляем!");
+                            MessageBox.Show($" Получено достижение: {ach.Name}!\n{ach.Description}", "Поздравляем!");
                         }
                     }
                 }
